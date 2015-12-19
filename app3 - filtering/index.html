@@ -1,7 +1,24 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app="filterApp">
+	<body ng-controller="filterCtrl">
+		Filter Results:
+		<input ng-model="filterTerm" type="text">
+
+		<table>
+			<tr>
+				<td>Name</td>
+				<td>Email</td>
+				<td>Date Employed</td>
+				<td>Phone #</td>
+			</tr>
+			<tr ng-repeat="empl in data | filter: filterTerm">
+				<td>{{empl.name}}</td>
+				<td>{{empl.email}}</td>
+				<td>{{empl.dateEmployed}}</td>
+				<td>{{empl.phone}}</td>
+			</tr>
+		</table>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

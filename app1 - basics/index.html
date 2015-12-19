@@ -1,6 +1,13 @@
-<html>
-	<body>
-	
+<html ng-app="basic">
+	<body ng-controller="basicCtrl">
+		<input ng-model="testEnter" type="text"><br/>
+
+		<p>
+			{{testEnter}}
+		</p>
+
+		{{test}}
+
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>

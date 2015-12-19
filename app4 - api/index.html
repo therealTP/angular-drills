@@ -1,9 +1,23 @@
-<html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app="pokeDuel">
+	<body ng-controller="pokeCtrl">
+
+		<button ng-click="getRandomPoke()" type="button" name="button">Get Random Pokemon!</button>
+
+		<div class="pokeBox">
+			<img ng-src="http://pokeapi.co{{randPoke.img_url}}" alt=""/>
+			<h5>{{randPoke.name}}</h5>
+			<h6>Moves:</h6>
+			<p ng-repeat="move in randPoke.moves">
+				{{move.name}} - {{move.learn_type}}
+			</p>
+
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
+		<script src="constFact.js"></script>
 	</body>
 </html>

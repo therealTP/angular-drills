@@ -2,8 +2,33 @@
 	<head>
 		<link rel="stylesheet" href="style.css"></link>
 	</head>
-	<body ng-controller="arrayController">
-	
+	<body ng-controller="arrayCtrl">
+		<table>
+			<thead>
+				<tr>
+					<td>
+						name
+					</td>
+					<td>
+						e-mail
+					</td>
+					<td>
+						date employed
+					</td>
+					<td>
+						phone #
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="person in listData">
+					<td>{{person.name}}</td>
+					<td>{{person.email}}</td>
+					<td>{{person.dateEmployed}}</td>
+					<td>{{person.phone}}</td>
+				</tr>
+			</tbody>
+		</table>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
