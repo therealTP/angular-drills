@@ -1,16 +1,94 @@
 <html ng-app="pokeDuel">
+	<head>
+		<link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+	</head>
 	<body ng-controller="pokeCtrl">
 
-		<button ng-click="getRandomPoke()" type="button" name="button">Get Random Pokemon!</button>
+		<h2>Pokemon Battle Arena</h2>
+		<button ng-click="getTwoNewPokemon()" type="button" name="button">Get Random Pokemon!</button>
 
-		<div class="pokeBox">
-			<img ng-src="http://pokeapi.co{{randPoke.img_url}}" alt=""/>
-			<h5>{{randPoke.name}}</h5>
-			<h6>Moves:</h6>
-			<p ng-repeat="move in randPoke.moves">
-				{{move.name}} - {{move.learn_type}}
-			</p>
-
+		<div class="pokeContainer">
+			<div class="pokeBox poke1">
+				<h3>Red Corner</h3>
+				<img ng-src="http://pokeapi.co{{randPoke1.img_url}}" alt=""/>
+				<h4>{{randPoke1.name}}</h4>
+				<span class="h5_span">Types: </span><span class="type_span" ng-repeat="type in randPoke1.types">{{type.name}}</span>
+				<table>
+					<tr>
+						<td>HP:</td>
+						<td>{{randPoke1.hp}}</td>
+					</tr>
+					<tr>
+						<td>Exp:</td>
+						<td>{{randPoke1.exp}}</td>
+					</tr>
+					<tr>
+						<td>Attack:</td>
+						<td>{{randPoke1.attack}}</td>
+					</tr>
+					<tr>
+						<td>Defense:</td>
+						<td>{{randPoke1.defense}}</td>
+					</tr>
+					<tr>
+						<td>Special Attack:</td>
+						<td>{{randPoke1.sp_atk}}</td>
+					</tr>
+					<tr>
+						<td>Special Defense:</td>
+						<td>{{randPoke1.sp_def}}</td>
+					</tr>
+				</table>
+				<h5>Moves:</h5>
+				<select ng-model="selectedMove" class="" name="">
+					<option ng-repeat="move in randPoke1.moves">{{move.name}} - {{move.learn_type}}</option>
+				</select>
+				<h5>Abilities:</h5>
+				<p ng-repeat="ability in randPoke1.abilities">
+					{{ability.name}}
+				</p>
+			</div>
+			<h2 class="vs-h2">VS</h2>
+			<div class="pokeBox poke2">
+				<h3>Blue Corner</h3>
+				<img ng-src="http://pokeapi.co{{randPoke2.img_url}}" alt=""/>
+				<h4>{{randPoke2.name}}</h4>
+				<span class="h5_span">Types: </span><span class="type_span" ng-repeat="type in randPoke2.types">{{type.name}}</span>
+				<table>
+					<tr>
+						<td>HP:</td>
+						<td>{{randPoke2.hp}}</td>
+					</tr>
+					<tr>
+						<td>Exp:</td>
+						<td>{{randPoke2.exp}}</td>
+					</tr>
+					<tr>
+						<td>Attack:</td>
+						<td>{{randPoke2.attack}}</td>
+					</tr>
+					<tr>
+						<td>Defense:</td>
+						<td>{{randPoke2.defense}}</td>
+					</tr>
+					<tr>
+						<td>Special Attack:</td>
+						<td>{{randPoke2.sp_atk}}</td>
+					</tr>
+					<tr>
+						<td>Special Defense:</td>
+						<td>{{randPoke2.sp_def}}</td>
+					</tr>
+				</table>
+				<h5>Moves:</h5>
+				<select ng-model="selectedMove" class="" name="">
+					<option ng-repeat="move in randPoke2.moves">{{move.name}} - {{move.learn_type}}</option>
+				</select>
+				<h5>Abilities:</h5>
+				<p ng-repeat="ability in randPoke2.abilities">
+					{{ability.name}}
+				</p>
+			</div>
 		</div>
 
 

@@ -1,33 +1,34 @@
 angular.module('pokeDuel').service('pokeSvc', function($http, $q, cnst) {
 
+    var getArrOfUris = function(pokeArr) {
+      var uriArr = [];
+      for (var i = 0; i < pokeArr.length; i++) {
+        uriArr.push(pokeArr[i].resource_uri);
+      }
+      return uriArr;
+    };
+
     // method to retrieve pokedex from api
-    this.getPokedex = function() {
-      var def = $q.defer();
+    this.getPokedexNew = function() {
       $http({
         method: 'GET',
         url: cnst.base_url + cnst.pokedex_url
       })
       .then(
         function(response) {
-          def.resolve(response.data.pokemon);
+          var arr = getArrOfUris(response.data.pokemon);
+          localStorage.pokedex = JSON.stringify(arr);
         },
         function(response) {
           def.reject(response.statusText);
         }
       );
-      return def.promise;
-      // .then(
-      //   function(pokemon) {
-      //     this.pokedex = pokemon;
-      //     return pokemon.length;
-      //   }
-      // );
     };
 
     // method to get random pokemon from pokedex
-    this.randomPoke = function(pokedex) {
-      var randInd = cnst.randPokeIndex();
-      var randPokeUrl = pokedex[randInd].resource_uri;
+    this.randomPoke = function() {
+      var randInd = cnst.randPokeIndex(); // generate random number
+      var randPokeUrl = JSON.parse(localStorage.pokedex)[randInd]; // get rand URL from array
       var def = $q.defer();
       $http({
         method: 'GET',
@@ -43,6 +44,7 @@ angular.module('pokeDuel').service('pokeSvc', function($http, $q, cnst) {
       );
       return def.promise;
     };
+
 
     this.getSpriteUrl = function(sprite_uri) {
       var def = $q.defer();

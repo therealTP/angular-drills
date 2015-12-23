@@ -1,24 +1,17 @@
 angular.module('pokeDuel').controller('pokeCtrl', function($scope, pokeSvc) {
 
-  var pokedex;
-  // start by getting pokedex to property in svc ($scope doesn't need it)
-  $scope.getPokedex = function() {
-    pokeSvc.getPokedex()
-    .then(
-      function(pokemon) {
-        pokedex = pokemon;
-      }
-    );
-  };
+  function getPokedex() {
+    pokeSvc.getPokedexNew();
+  }
 
-  $scope.getPokedex();
+  getPokedex();
 
-  // get random poke from pokedex
-  $scope.getRandomPoke = function() {
-    pokeSvc.randomPoke(pokedex)
+  // get random poke from pokedex, assign to scopeVar parameter
+  $scope.getRandomPoke = function(scopeVar) {
+    pokeSvc.randomPoke()
     .then(
       function(randPoke) {
-        $scope.randPoke = randPoke.data;
+        $scope[scopeVar] = randPoke.data;
         return randPoke;
       }
     )
@@ -31,9 +24,14 @@ angular.module('pokeDuel').controller('pokeCtrl', function($scope, pokeSvc) {
     .then(
       function(img_url) {
         console.log(img_url);
-        $scope.randPoke.img_url = img_url;
+        $scope[scopeVar].img_url = img_url;
       }
     );
+  };
+
+  $scope.getTwoNewPokemon = function() {
+    $scope.getRandomPoke('randPoke1');
+    $scope.getRandomPoke('randPoke2');
   };
 
   // get uri link and use service to get data on pokemon

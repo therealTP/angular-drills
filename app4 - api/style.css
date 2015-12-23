@@ -1,0 +1,75 @@
+body {
+  background: url('pokebackground.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+  font-family: 'Helvetica';
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+  .vs-h2 {
+    float: left;
+    margin-left: 30px;
+    margin-top: 75px;
+  }
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+.pokeContainer {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  padding: 50px 250px;
+}
+
+.pokeBox {
+  border: 1px solid black;
+  width: 30%;
+  margin: 0 auto;
+  float: left;
+  border-radius: 5px;
+}
+
+  .poke1 {
+    background-color: red;
+  }
+
+  .poke2 {
+    margin-left: 50px;
+    background-color: blue;
+  }
+
+  .pokeBox img, .pokeBox select {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .pokeBox h3, .pokeBox h4, .pokeBox h5, .pokeBox p {
+    text-align: center;
+  }
+
+  .h5_span {
+    font-weight: bold;
+  }
+
+  .type_span {
+    border: 1px solid black;
+    margin-right: 5px;
+    font-style: italic;
+  }
+
+  table, .h5_span {
+    margin: 20px;
+  }
+
+    tr td:first-child {
+      font-weight: bold;
+    }
