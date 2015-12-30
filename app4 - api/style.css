@@ -52,12 +52,22 @@ button {
     margin: 0 auto;
   }
 
+  .pokeBox img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .pokeBox button {
+    margin-bottom: 15px;
+  }
+
   .pokeBox h3, .pokeBox h4, .pokeBox h5, .pokeBox p {
     text-align: center;
   }
 
   .h5_span {
     font-weight: bold;
+    margin: 20px;
   }
 
   .type_span {
@@ -66,8 +76,9 @@ button {
     font-style: italic;
   }
 
-  table, .h5_span {
-    margin: 20px;
+  table {
+    border: 1px solid black;
+    margin: 20px auto 0px auto;
   }
 
     tr td:first-child {

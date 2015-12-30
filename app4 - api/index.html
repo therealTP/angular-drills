@@ -12,6 +12,7 @@
 				<h3>Red Corner</h3>
 				<img ng-src="http://pokeapi.co{{randPoke1.img_url}}" alt=""/>
 				<h4>{{randPoke1.name}}</h4>
+			<button ng-click="getRandomPoke('randPoke1')" type="button" name="button">Get New</button>
 				<span class="h5_span">Types: </span><span class="type_span" ng-repeat="type in randPoke1.types">{{type.name}}</span>
 				<table>
 					<tr>
@@ -53,6 +54,7 @@
 				<h3>Blue Corner</h3>
 				<img ng-src="http://pokeapi.co{{randPoke2.img_url}}" alt=""/>
 				<h4>{{randPoke2.name}}</h4>
+				<button ng-click="getRandomPoke('randPoke2')" type="button" name="button">Get New</button>
 				<span class="h5_span">Types: </span><span class="type_span" ng-repeat="type in randPoke2.types">{{type.name}}</span>
 				<table>
 					<tr>
