@@ -7,7 +7,8 @@ angular.module('apiApp').service('apiSvc', function($http, $q) {
     })
     .then(
       function(response) {
-        def.resolve(response.results);
+        console.log(response.data);
+        def.resolve(response.data.results);
       },
       function(err) {
         def.reject(err);
