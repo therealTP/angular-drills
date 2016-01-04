@@ -1,7 +1,10 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app="filterApp">
+	<body ng-controller="filterCtrl">
+		Filter: <input ng-model="emplFilter" type="text" name="name" value="">
+		<p ng-repeat="empl in emplData | filter: emplFilter">
+			{{empl.name}} - {{empl.email}}
+		</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

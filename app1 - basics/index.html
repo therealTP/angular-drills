@@ -1,6 +1,8 @@
-<html>
-	<body>
-	
+<html ng-app="myApp">
+	<body ng-controller="mainCtrl">
+		{{test}}
+		<input ng-model="inputVal" type="text" name="name" value="">
+		{{inputVal}}
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
