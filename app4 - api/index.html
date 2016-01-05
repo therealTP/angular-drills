@@ -1,7 +1,25 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<body ng-controller="mainCtrl">
+		<h3>Planets</h3>
+    <table>
+			<tr style="font-weight: bold">
+				<td>Name</td>
+				<td>Climate</td>
+				<td>Population</td>
+				<td>Gravity</td>
+				<td>Diameter</td>
+				<td>Rotation Period</td>
+			</tr>
+    	<tr ng-repeat="planet in myData">
+    		<td>{{planet.name}}</td>
+    		<td>{{planet.climate}}</td>
+    		<td>{{planet.population}}</td>
+    		<td>{{planet.gravity}}</td>
+    		<td>{{planet.diameter}}</td>
+    		<td>{{planet.rotation_period}}</td>
+    	</tr>
+    </table>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>

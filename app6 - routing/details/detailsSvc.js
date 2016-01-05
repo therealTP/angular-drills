@@ -1,10 +1,9 @@
-angular.module('apiApp').service('mainSvc', function($http, $q) {
-  var base_url = 'http://swapi.co/api';
-  this.getApiData = function(resourceUrl) {
+angular.module('routeApp').service('detailsSvc', function($http, $q) {
+  this.getDetails = function() {
     var def = $q.defer();
     $http({
       method: 'GET',
-      url: base_url + resourceUrl
+      url: 'http://swapi.co/api/planets/'
     })
     .then(
       function(response) {
