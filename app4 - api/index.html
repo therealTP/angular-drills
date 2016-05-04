@@ -1,7 +1,11 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<body ng-controller="apiCtrl">
+		<h3>Star Wars Api Stuff</h3>
+		<ul>
+			<li ng-repeat="char in data.results">{{char.name}} - {{char.height}} - {{char.birth_year}}</li>
+		</ul>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
